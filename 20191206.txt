@@ -1,0 +1,610 @@
+Last login: Fri Dec  6 15:52:11 on ttys000
+(test3.8.0) merimos-MacBook-Air:~ macair$ pip3 install requests
+Collecting requests
+  Downloading https://files.pythonhosted.org/packages/51/bd/23c926cd341ea6b7dd0b2a00aba99ae0f828be89d72b2190f27c11d4b7fb/requests-2.22.0-py2.py3-none-any.whl (57kB)
+     |████████████████████████████████| 61kB 1.3MB/s 
+Collecting idna<2.9,>=2.5 (from requests)
+  Downloading https://files.pythonhosted.org/packages/14/2c/cd551d81dbe15200be1cf41cd03869a46fe7226e7450af7a6545bfc474c9/idna-2.8-py2.py3-none-any.whl (58kB)
+     |████████████████████████████████| 61kB 2.0MB/s 
+Collecting urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 (from requests)
+  Downloading https://files.pythonhosted.org/packages/b4/40/a9837291310ee1ccc242ceb6ebfd9eb21539649f193a7c8c86ba15b98539/urllib3-1.25.7-py2.py3-none-any.whl (125kB)
+     |████████████████████████████████| 133kB 1.5MB/s 
+Collecting certifi>=2017.4.17 (from requests)
+  Downloading https://files.pythonhosted.org/packages/b9/63/df50cac98ea0d5b006c55a399c3bf1db9da7b5a24de7890bc9cfd5dd9e99/certifi-2019.11.28-py2.py3-none-any.whl (156kB)
+     |████████████████████████████████| 163kB 1.7MB/s 
+Collecting chardet<3.1.0,>=3.0.2 (from requests)
+  Downloading https://files.pythonhosted.org/packages/bc/a9/01ffebfb562e4274b6487b4bb1ddec7ca55ec7510b22e4c51f14098443b8/chardet-3.0.4-py2.py3-none-any.whl (133kB)
+     |████████████████████████████████| 143kB 1.5MB/s 
+Installing collected packages: idna, urllib3, certifi, chardet, requests
+Successfully installed certifi-2019.11.28 chardet-3.0.4 idna-2.8 requests-2.22.0 urllib3-1.25.7
+WARNING: You are using pip version 19.2.3, however version 19.3.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+(test3.8.0) merimos-MacBook-Air:~ macair$ python
+Python 3.8.0 (default, Dec  6 2019, 16:45:40) 
+[Clang 9.0.0 (clang-900.0.39.2)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import requsests
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'requsests'
+>>> import requests
+>>> r = requests.get('https://adventofcode.com/2019/day/1/input')
+>>> print(r.bodys)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'Response' object has no attribute 'bodys'
+>>> print(r.body)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'Response' object has no attribute 'body'
+>>> print(r.content)
+b'Puzzle inputs differ by user.  Please log in to get your puzzle input.\n'
+>>> exit()
+(test3.8.0) merimos-MacBook-Air:~ macair$ pip3 install beautifulsoup4
+Collecting beautifulsoup4
+  Downloading https://files.pythonhosted.org/packages/3b/c8/a55eb6ea11cd7e5ac4bacdf92bac4693b90d3ba79268be16527555e186f0/beautifulsoup4-4.8.1-py3-none-any.whl (101kB)
+     |████████████████████████████████| 102kB 1.3MB/s 
+Collecting soupsieve>=1.2 (from beautifulsoup4)
+  Downloading https://files.pythonhosted.org/packages/81/94/03c0f04471fc245d08d0a99f7946ac228ca98da4fa75796c507f61e688c2/soupsieve-1.9.5-py2.py3-none-any.whl
+Installing collected packages: soupsieve, beautifulsoup4
+Successfully installed beautifulsoup4-4.8.1 soupsieve-1.9.5
+WARNING: You are using pip version 19.2.3, however version 19.3.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+(test3.8.0) merimos-MacBook-Air:~ macair$ python
+Python 3.8.0 (default, Dec  6 2019, 16:45:40) 
+[Clang 9.0.0 (clang-900.0.39.2)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from bs4 import Beautifulsoup
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ImportError: cannot import name 'Beautifulsoup' from 'bs4' (/Users/macair/.pyenv/versions/test3.8.0/lib/python3.8/site-packages/bs4/__init__.py)
+>>> from bs4 import BeautifulSoup
+>>> r = requests.get("https://adventofcode.com/2019/day/1/input")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'requests' is not defined
+>>> import requests
+>>> from bs4 import BeautifulSoup
+>>> r = requests.get("https://adventofcode.com/2019/day/1/input")
+>>> soup = BeautifulSoup(r.content, "html.perser")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Users/macair/.pyenv/versions/test3.8.0/lib/python3.8/site-packages/bs4/__init__.py", line 213, in __init__
+    raise FeatureNotFound(
+bs4.FeatureNotFound: Couldn't find a tree builder with the features you requested: html.perser. Do you need to install a parser library?
+>>> exit()
+(test3.8.0) merimos-MacBook-Air:~ macair$ python
+Python 3.8.0 (default, Dec  6 2019, 16:45:40) 
+[Clang 9.0.0 (clang-900.0.39.2)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> phython
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'phython' is not defined
+>>> import requsests
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'requsests'
+>>> import requests
+>>> from bs4 import BeautifulSoup
+>>> r = requests.get('https://adventofcode.com/2019/day/1/input')
+>>> soup = BeautifulSoup(r.content, "html.parser")
+>>> print(soup.find("ul","innerText").text)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'NoneType' object has no attribute 'text'
+>>> print(soup.find("ul","innerText"))
+None
+>>> print(soup.find("innerText"))
+None
+>>> print(soup.find("pre","data"))
+None
+>>> r = requests.get('https://adventofcode.com/2019/day/1/input').text
+>>> print(r)
+Puzzle inputs differ by user.  Please log in to get your puzzle input.
+
+>>> r = requests.get('https://adventofcode.com/2019/day/1/input')
+>>> soup = BeautifulSoup(r.content, "html.parser")
+>>> print(soup)
+Puzzle inputs differ by user.  Please log in to get your puzzle input.
+
+>>> real_page_tags = soup.find_all("pre")
+>>> for tag in real_page_tags:
+... print(tag)
+  File "<stdin>", line 2
+    print(tag)
+    ^
+IndentationError: expected an indented block
+>>> for tag in real_page_tags
+  File "<stdin>", line 1
+    for tag in real_page_tags
+                            ^
+SyntaxError: invalid syntax
+>>> for tag in real_page_tags:print(tag)
+... 
+>>> for script in soup(["script", "style"]):
+...     script.decompose()
+... text=soup.get_text()
+  File "<stdin>", line 3
+    text=soup.get_text()
+    ^
+SyntaxError: invalid syntax
+>>> text=soup.get_text()
+>>> lines= [line.strip() for line in text.splitlines()]
+>>> print(lines)
+['Puzzle inputs differ by user.  Please log in to get your puzzle input.']
+>>> exit()
+(test3.8.0) merimos-MacBook-Air:~ macair$ python
+Python 3.8.0 (default, Dec  6 2019, 16:45:40) 
+[Clang 9.0.0 (clang-900.0.39.2)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import requests
+>>> from bs4 import BeautifulSoup
+>>> r = requests.get('https://adventofcode.com/2019/day/1/input')
+>>> soup = BeautifulSoup(r.content, "html.parser")
+>>> text = soup.find("pre")
+>>> print(text)
+None
+>>> text = soup.find("pre"."innerText")
+  File "<stdin>", line 1
+    text = soup.find("pre"."innerText")
+                           ^
+SyntaxError: invalid syntax
+>>> text = soup.find("pre")
+>>> print(pre.text)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'pre' is not defined
+>>> print(text.text)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'NoneType' object has no attribute 'text'
+>>> print(text.string)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'NoneType' object has no attribute 'string'
+>>> exit()
+(test3.8.0) merimos-MacBook-Air:~ macair$ python
+Python 3.8.0 (default, Dec  6 2019, 16:45:40) 
+[Clang 9.0.0 (clang-900.0.39.2)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import requests
+>>> from bs4 import BeautifulSoup
+>>> r = requests.get('https://adventofcode.com/2019/day/1/input')
+^[[A
+>>> soup = BeautifulSoup(r.content, "html.parser")
+>>> print(soup)
+Puzzle inputs differ by user.  Please log in to get your puzzle input.
+
+>>> exit()
+(test3.8.0) merimos-MacBook-Air:~ macair$ pip install Django
+Collecting Django
+  Downloading https://files.pythonhosted.org/packages/43/d6/0aed0b12c66527748ce5a007da4618a65dfbe1f8fca82eccedf57d60295f/Django-3.0-py3-none-any.whl (7.4MB)
+     |████████████████████████████████| 7.4MB 985kB/s 
+Collecting sqlparse>=0.2.2 (from Django)
+  Downloading https://files.pythonhosted.org/packages/ef/53/900f7d2a54557c6a37886585a91336520e5539e3ae2423ff1102daf4f3a7/sqlparse-0.3.0-py2.py3-none-any.whl
+Collecting asgiref~=3.2 (from Django)
+  Downloading https://files.pythonhosted.org/packages/a5/cb/5a235b605a9753ebcb2730c75e610fb51c8cab3f01230080a8229fa36adb/asgiref-3.2.3-py2.py3-none-any.whl
+Collecting pytz (from Django)
+  Downloading https://files.pythonhosted.org/packages/e7/f9/f0b53f88060247251bf481fa6ea62cd0d25bf1b11a87888e53ce5b7c8ad2/pytz-2019.3-py2.py3-none-any.whl (509kB)
+     |████████████████████████████████| 512kB 1.4MB/s 
+Installing collected packages: sqlparse, asgiref, pytz, Django
+Successfully installed Django-3.0 asgiref-3.2.3 pytz-2019.3 sqlparse-0.3.0
+WARNING: You are using pip version 19.2.3, however version 19.3.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+(test3.8.0) merimos-MacBook-Air:~ macair$ python manage.py runserver
+/Users/macair/.pyenv/versions/test3.8.0/bin/python: can't open file 'manage.py': [Errno 2] No such file or directory
+(test3.8.0) merimos-MacBook-Air:~ macair$ pyenv ehich python
+pyenv: no such command `ehich'
+(test3.8.0) merimos-MacBook-Air:~ macair$ pyenv which python
+/Users/macair/.pyenv/versions/test3.8.0/bin/python
+(test3.8.0) merimos-MacBook-Air:~ macair$ pip uninstall Django
+Uninstalling Django-3.0:
+  Would remove:
+    /Users/macair/.pyenv/versions/3.8.0/envs/test3.8.0/bin/django-admin
+    /Users/macair/.pyenv/versions/3.8.0/envs/test3.8.0/bin/django-admin.py
+    /Users/macair/.pyenv/versions/3.8.0/envs/test3.8.0/lib/python3.8/site-packages/Django-3.0.dist-info/*
+    /Users/macair/.pyenv/versions/3.8.0/envs/test3.8.0/lib/python3.8/site-packages/django/*
+Proceed (y/n)? y
+  Successfully uninstalled Django-3.0
+(test3.8.0) merimos-MacBook-Air:~ macair$ pip uninstall Django
+WARNING: Skipping Django as it is not installed.
+(test3.8.0) merimos-MacBook-Air:~ macair$ pip install Django
+Collecting Django
+  Using cached https://files.pythonhosted.org/packages/43/d6/0aed0b12c66527748ce5a007da4618a65dfbe1f8fca82eccedf57d60295f/Django-3.0-py3-none-any.whl
+Requirement already satisfied: asgiref~=3.2 in ./.pyenv/versions/3.8.0/envs/test3.8.0/lib/python3.8/site-packages (from Django) (3.2.3)
+Requirement already satisfied: sqlparse>=0.2.2 in ./.pyenv/versions/3.8.0/envs/test3.8.0/lib/python3.8/site-packages (from Django) (0.3.0)
+Requirement already satisfied: pytz in ./.pyenv/versions/3.8.0/envs/test3.8.0/lib/python3.8/site-packages (from Django) (2019.3)
+Installing collected packages: Django
+Successfully installed Django-3.0
+WARNING: You are using pip version 19.2.3, however version 19.3.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+(test3.8.0) merimos-MacBook-Air:~ macair$ ./manage.py
+-bash: ./manage.py: No such file or directory
+(test3.8.0) merimos-MacBook-Air:~ macair$ which python
+/Users/macair/.pyenv/shims/python
+(test3.8.0) merimos-MacBook-Air:~ macair$ ls
+Applications				Movies
+Calibre Library				Music
+Creative Cloud Files			Pictures
+Desktop					Public
+Documents				PycharmProjects
+Downloads				Voices
+Library					iCloud Drive（アーカイブ）
+(test3.8.0) merimos-MacBook-Air:~ macair$ cd workspace
+-bash: cd: workspace: No such file or directory
+(test3.8.0) merimos-MacBook-Air:~ macair$ pip --version
+pip 19.2.3 from /Users/macair/.pyenv/versions/3.8.0/envs/test3.8.0/lib/python3.8/site-packages/pip (python 3.8)
+(test3.8.0) merimos-MacBook-Air:~ macair$ deactivate
+pyenv-virtualenv: deactivate must be sourced. Run 'source deactivate' instead of 'deactivate'
+(test3.8.0) merimos-MacBook-Air:~ macair$ ls
+Applications				Movies
+Calibre Library				Music
+Creative Cloud Files			Pictures
+Desktop					Public
+Documents				PycharmProjects
+Downloads				Voices
+Library					iCloud Drive（アーカイブ）
+(test3.8.0) merimos-MacBook-Air:~ macair$ /Users/macair mkdir workspace
+-bash: /Users/macair: is a directory
+(test3.8.0) merimos-MacBook-Air:~ macair$ ls
+Applications				Movies
+Calibre Library				Music
+Creative Cloud Files			Pictures
+Desktop					Public
+Documents				PycharmProjects
+Downloads				Voices
+Library					iCloud Drive（アーカイブ）
+(test3.8.0) merimos-MacBook-Air:~ macair$ help
+GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin16)
+These shell commands are defined internally.  Type `help' to see this list.
+Type `help name' to find out more about the function `name'.
+Use `info bash' to find out more about the shell in general.
+Use `man -k' or `info' to find out more about commands not in this list.
+
+A star (*) next to a name means that the command is disabled.
+
+ JOB_SPEC [&]                       (( expression ))
+ . filename [arguments]             :
+ [ arg... ]                         [[ expression ]]
+ alias [-p] [name[=value] ... ]     bg [job_spec ...]
+ bind [-lpvsPVS] [-m keymap] [-f fi break [n]
+ builtin [shell-builtin [arg ...]]  caller [EXPR]
+ case WORD in [PATTERN [| PATTERN]. cd [-L|-P] [dir]
+ command [-pVv] command [arg ...]   compgen [-abcdefgjksuv] [-o option
+ complete [-abcdefgjksuv] [-pr] [-o continue [n]
+ declare [-afFirtx] [-p] [name[=val dirs [-clpv] [+N] [-N]
+ disown [-h] [-ar] [jobspec ...]    echo [-neE] [arg ...]
+ enable [-pnds] [-a] [-f filename]  eval [arg ...]
+ exec [-cl] [-a name] file [redirec exit [n]
+ export [-nf] [name[=value] ...] or false
+ fc [-e ename] [-nlr] [first] [last fg [job_spec]
+ for NAME [in WORDS ... ;] do COMMA for (( exp1; exp2; exp3 )); do COM
+ function NAME { COMMANDS ; } or NA getopts optstring name [arg]
+ hash [-lr] [-p pathname] [-dt] [na help [-s] [pattern ...]
+ history [-c] [-d offset] [n] or hi if COMMANDS; then COMMANDS; [ elif
+ jobs [-lnprs] [jobspec ...] or job kill [-s sigspec | -n signum | -si
+ let arg [arg ...]                  local name[=value] ...
+ logout                             popd [+N | -N] [-n]
+ printf [-v var] format [arguments] pushd [dir | +N | -N] [-n]
+ pwd [-LP]                          read [-ers] [-u fd] [-t timeout] [
+ readonly [-af] [name[=value] ...]  return [n]
+ select NAME [in WORDS ... ;] do CO set [--abefhkmnptuvxBCHP] [-o opti
+ shift [n]                          shopt [-pqsu] [-o long-option] opt
+ source filename [arguments]        suspend [-f]
+ test [expr]                        time [-p] PIPELINE
+ times                              trap [-lp] [arg signal_spec ...]
+ true                               type [-afptP] name [name ...]
+ typeset [-afFirtx] [-p] name[=valu ulimit [-SHacdfilmnpqstuvx] [limit
+ umask [-p] [-S] [mode]             unalias [-a] name [name ...]
+ unset [-f] [-v] [name ...]         until COMMANDS; do COMMANDS; done
+ variables - Some variable names an wait [n]
+ while COMMANDS; do COMMANDS; done  { COMMANDS ; }
+(test3.8.0) merimos-MacBook-Air:~ macair$ mkdir workspace
+(test3.8.0) merimos-MacBook-Air:~ macair$ ls
+Applications				Music
+Calibre Library				Pictures
+Creative Cloud Files			Public
+Desktop					PycharmProjects
+Documents				Voices
+Downloads				iCloud Drive（アーカイブ）
+Library					workspace
+Movies
+(test3.8.0) merimos-MacBook-Air:~ macair$ cd ..
+merimos-MacBook-Air:Users macair$ ls
+Guest	Shared	junpei	macair
+merimos-MacBook-Air:Users macair$ cd /
+merimos-MacBook-Air:/ macair$ ls
+Applications			etc
+Incompatible Software		home
+Library				installer.failurerequests
+Network				net
+System				private
+Users				sbin
+Volumes				tmp
+bin				usr
+cores				var
+dev
+merimos-MacBook-Air:/ macair$ cd ~/Desktop
+(test3.8.0) merimos-MacBook-Air:Desktop macair$ ls
+SetupEScribe2_SP19_INT.pkg	python_practice
+pycharm-community-2019.3.dmg
+(test3.8.0) merimos-MacBook-Air:Desktop macair$ pip uninstall Django
+Uninstalling Django-3.0:
+  Would remove:
+    /Users/macair/.pyenv/versions/3.8.0/envs/test3.8.0/bin/django-admin
+    /Users/macair/.pyenv/versions/3.8.0/envs/test3.8.0/bin/django-admin.py
+    /Users/macair/.pyenv/versions/3.8.0/envs/test3.8.0/lib/python3.8/site-packages/Django-3.0.dist-info/*
+    /Users/macair/.pyenv/versions/3.8.0/envs/test3.8.0/lib/python3.8/site-packages/django/*
+Proceed (y/n)? n
+(test3.8.0) merimos-MacBook-Air:Desktop macair$ cd python_pravtice
+-bash: cd: python_pravtice: No such file or directory
+(test3.8.0) merimos-MacBook-Air:Desktop macair$ cd python_practice
+(test3.8.0) merimos-MacBook-Air:python_practice macair$ django-admin startprojest django_practice
+No Django settings specified.
+Unknown command: 'startprojest'. Did you mean startproject?
+Type 'django-admin help' for usage.
+(test3.8.0) merimos-MacBook-Air:python_practice macair$ django-admin startproject django_practice
+(test3.8.0) merimos-MacBook-Air:python_practice macair$ cd django_practice
+(test3.8.0) merimos-MacBook-Air:django_practice macair$ python3 manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 17 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+
+December 06, 2019 - 11:33:21
+Django version 3.0, using settings 'django_practice.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+[06/Dec/2019 11:34:25] "GET / HTTP/1.1" 200 16351
+[06/Dec/2019 11:34:25] "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+[06/Dec/2019 11:34:25] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+[06/Dec/2019 11:34:25] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+[06/Dec/2019 11:34:25] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+Not Found: /favicon.ico
+[06/Dec/2019 11:34:25] "GET /favicon.ico HTTP/1.1" 404 1981
+            
+^C(test3.8.0) merimos-MacBook-Air:django_practice macair cd /
+merimos-MacBook-Air:/ macair$ ls
+Applications			etc
+Incompatible Software		home
+Library				installer.failurerequests
+Network				net
+System				private
+Users				sbin
+Volumes				tmp
+bin				usr
+cores				var
+dev
+merimos-MacBook-Air:/ macair$ cd ~/Desktop
+(test3.8.0) merimos-MacBook-Air:Desktop macair$ python3 manage.py runserver
+/Users/macair/.pyenv/versions/test3.8.0/bin/python3: can't open file 'manage.py': [Errno 2] No such file or directory
+(test3.8.0) merimos-MacBook-Air:Desktop macair$ cd django_practice
+-bash: cd: django_practice: No such file or directory
+(test3.8.0) merimos-MacBook-Air:Desktop macair$ python3 manage.py runserver
+/Users/macair/.pyenv/versions/test3.8.0/bin/python3: can't open file 'manage.py': [Errno 2] No such file or directory
+(test3.8.0) merimos-MacBook-Air:Desktop macair$ cd django_practice
+-bash: cd: django_practice: No such file or directory
+(test3.8.0) merimos-MacBook-Air:Desktop macair$ cd python_practice
+(test3.8.0) merimos-MacBook-Air:python_practice macair$ cd django_practice
+(test3.8.0) merimos-MacBook-Air:django_practice macair$ python3 manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 17 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+
+December 06, 2019 - 13:23:51
+Django version 3.0, using settings 'django_practice.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+^C(test3.8.0) merimos-MacBook-Air:django_practice macaircd python_practice
+-bash: cd: python_practice: No such file or directory
+(test3.8.0) merimos-MacBook-Air:django_practice macair$ cd .
+(test3.8.0) merimos-MacBook-Air:django_practice macair$ cd ..
+(test3.8.0) merimos-MacBook-Air:python_practice macair$ cd django_practice
+(test3.8.0) merimos-MacBook-Air:django_practice macair$ python3 manage.py startapp test
+CommandError: 'test' conflicts with the name of an existing Python module and cannot be used as an app name. Please try another name.
+(test3.8.0) merimos-MacBook-Air:django_practice macair$ python3 manage.py startapp practice
+(test3.8.0) merimos-MacBook-Air:django_practice macair$ ls
+db.sqlite3	django_practice	manage.py	practice
+(test3.8.0) merimos-MacBook-Air:django_practice macair$ python3 manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 17 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+
+December 06, 2019 - 13:51:24
+Django version 3.0, using settings 'django_practice.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+[06/Dec/2019 13:51:28] "GET / HTTP/1.1" 200 16351
+[06/Dec/2019 13:51:28] "GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+[06/Dec/2019 13:51:29] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0
+[06/Dec/2019 13:51:29] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+[06/Dec/2019 13:51:29] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+[06/Dec/2019 13:51:31] "GET / HTTP/1.1" 200 16351
+[06/Dec/2019 13:51:32] "GET / HTTP/1.1" 200 16351
+/Users/macair/Desktop/python_practice/django_practice/django_practice/urls.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 17 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+
+December 06, 2019 - 13:57:25
+Django version 3.0, using settings 'django_practice.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+[06/Dec/2019 13:57:32] "GET / HTTP/1.1" 200 14
+/Users/macair/Desktop/python_practice/django_practice/practice/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 17 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+
+December 06, 2019 - 13:59:12
+Django version 3.0, using settings 'django_practice.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+^C(test3.8.0) merimos-MacBook-Air:django_practice macaircd ~/Desktop
+(test3.8.0) merimos-MacBook-Air:Desktop macair$ pip3 install Flask
+Collecting Flask
+  Downloading https://files.pythonhosted.org/packages/9b/93/628509b8d5dc749656a9641f4caf13540e2cdec85276964ff8f43bbb1d3b/Flask-1.1.1-py2.py3-none-any.whl (94kB)
+     |████████████████████████████████| 102kB 1.4MB/s 
+Collecting Werkzeug>=0.15 (from Flask)
+  Downloading https://files.pythonhosted.org/packages/ce/42/3aeda98f96e85fd26180534d36570e4d18108d62ae36f87694b476b83d6f/Werkzeug-0.16.0-py2.py3-none-any.whl (327kB)
+     |████████████████████████████████| 327kB 1.5MB/s 
+Collecting Jinja2>=2.10.1 (from Flask)
+  Using cached https://files.pythonhosted.org/packages/65/e0/eb35e762802015cab1ccee04e8a277b03f1d8e53da3ec3106882ec42558b/Jinja2-2.10.3-py2.py3-none-any.whl
+Collecting click>=5.1 (from Flask)
+  Using cached https://files.pythonhosted.org/packages/fa/37/45185cb5abbc30d7257104c434fe0b07e5a195a6847506c074527aa599ec/Click-7.0-py2.py3-none-any.whl
+Collecting itsdangerous>=0.24 (from Flask)
+  Downloading https://files.pythonhosted.org/packages/76/ae/44b03b253d6fade317f32c24d100b3b35c2239807046a4c953c7b89fa49e/itsdangerous-1.1.0-py2.py3-none-any.whl
+Collecting MarkupSafe>=0.23 (from Jinja2>=2.10.1->Flask)
+  Downloading https://files.pythonhosted.org/packages/b9/2e/64db92e53b86efccfaea71321f597fa2e1b2bd3853d8ce658568f7a13094/MarkupSafe-1.1.1.tar.gz
+Installing collected packages: Werkzeug, MarkupSafe, Jinja2, click, itsdangerous, Flask
+  Running setup.py install for MarkupSafe ... done
+Successfully installed Flask-1.1.1 Jinja2-2.10.3 MarkupSafe-1.1.1 Werkzeug-0.16.0 click-7.0 itsdangerous-1.1.0
+WARNING: You are using pip version 19.2.3, however version 19.3.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+(test3.8.0) merimos-MacBook-Air:Desktop macair$ ls
+Visual Studio Code.app	python_practice
+(test3.8.0) merimos-MacBook-Air:Desktop macair$ cd python_practice
+(test3.8.0) merimos-MacBook-Air:python_practice macair$ python3 run.py
+/Users/macair/.pyenv/versions/test3.8.0/bin/python3: can't open file 'run.py': [Errno 2] No such file or directory
+(test3.8.0) merimos-MacBook-Air:python_practice macair$ cd flaskPractice
+(test3.8.0) merimos-MacBook-Air:flaskPractice macair$ python3 run.py
+ * Serving Flask app "app.app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+127.0.0.1 - - [06/Dec/2019 23:28:28] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [06/Dec/2019 23:28:29] "GET /favicon.ico HTTP/1.1" 404 -
+[2019-12-06 23:28:44,123] ERROR in app: Exception on /index [GET]
+Traceback (most recent call last):
+  File "/Users/macair/.pyenv/versions/test3.8.0/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/macair/.pyenv/versions/test3.8.0/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/macair/.pyenv/versions/test3.8.0/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/macair/.pyenv/versions/test3.8.0/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/macair/.pyenv/versions/test3.8.0/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/macair/.pyenv/versions/test3.8.0/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/macair/Desktop/python_practice/flaskPractice/app/app.py", line 17, in index
+    return render_template("index.html")
+  File "/Users/macair/.pyenv/versions/test3.8.0/lib/python3.8/site-packages/flask/templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Users/macair/.pyenv/versions/test3.8.0/lib/python3.8/site-packages/jinja2/environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Users/macair/.pyenv/versions/test3.8.0/lib/python3.8/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/macair/.pyenv/versions/test3.8.0/lib/python3.8/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/macair/.pyenv/versions/test3.8.0/lib/python3.8/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/macair/.pyenv/versions/test3.8.0/lib/python3.8/site-packages/flask/templating.py", line 60, in get_source
+    return self._get_source_fast(environment, template)
+  File "/Users/macair/.pyenv/versions/test3.8.0/lib/python3.8/site-packages/flask/templating.py", line 86, in _get_source_fast
+    return loader.get_source(environment, template)
+  File "/Users/macair/.pyenv/versions/test3.8.0/lib/python3.8/site-packages/jinja2/loaders.py", line 171, in get_source
+    f = open_if_exists(filename)
+  File "/Users/macair/.pyenv/versions/test3.8.0/lib/python3.8/site-packages/jinja2/utils.py", line 154, in open_if_exists
+    return open(filename, mode)
+NotADirectoryError: [Errno 20] Not a directory: '/Users/macair/Desktop/python_practice/flaskPractice/app/templates/index.html'
+127.0.0.1 - - [06/Dec/2019 23:28:44] "GET /index HTTP/1.1" 500 -
+[2019-12-06 23:29:01,955] ERROR in app: Exception on /index [GET]
+Traceback (most recent call last):
+  File "/Users/macair/.pyenv/versions/test3.8.0/lib/python3.8/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/macair/.pyenv/versions/test3.8.0/lib/python3.8/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/macair/.pyenv/versions/test3.8.0/lib/python3.8/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/macair/.pyenv/versions/test3.8.0/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/macair/.pyenv/versions/test3.8.0/lib/python3.8/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/macair/.pyenv/versions/test3.8.0/lib/python3.8/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/macair/Desktop/python_practice/flaskPractice/app/app.py", line 17, in index
+    return render_template("index.html")
+  File "/Users/macair/.pyenv/versions/test3.8.0/lib/python3.8/site-packages/flask/templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Users/macair/.pyenv/versions/test3.8.0/lib/python3.8/site-packages/jinja2/environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Users/macair/.pyenv/versions/test3.8.0/lib/python3.8/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/macair/.pyenv/versions/test3.8.0/lib/python3.8/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/macair/.pyenv/versions/test3.8.0/lib/python3.8/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/macair/.pyenv/versions/test3.8.0/lib/python3.8/site-packages/flask/templating.py", line 60, in get_source
+    return self._get_source_fast(environment, template)
+  File "/Users/macair/.pyenv/versions/test3.8.0/lib/python3.8/site-packages/flask/templating.py", line 86, in _get_source_fast
+    return loader.get_source(environment, template)
+  File "/Users/macair/.pyenv/versions/test3.8.0/lib/python3.8/site-packages/jinja2/loaders.py", line 171, in get_source
+    f = open_if_exists(filename)
+  File "/Users/macair/.pyenv/versions/test3.8.0/lib/python3.8/site-packages/jinja2/utils.py", line 154, in open_if_exists
+    return open(filename, mode)
+NotADirectoryError: [Errno 20] Not a directory: '/Users/macair/Desktop/python_practice/flaskPractice/app/templates/index.html'
+127.0.0.1 - - [06/Dec/2019 23:29:01] "GET /index HTTP/1.1" 500 -
+127.0.0.1 - - [06/Dec/2019 23:31:28] "GET /index HTTP/1.1" 200 -
+127.0.0.1 - - [06/Dec/2019 23:37:10] "GET /index HTTP/1.1" 200 -
+127.0.0.1 - - [06/Dec/2019 23:37:13] "GET /index HTTP/1.1" 200 -
+127.0.0.1 - - [06/Dec/2019 23:37:28] "GET /index HTTP/1.1" 200 -
+127.0.0.1 - - [06/Dec/2019 23:37:29] "GET /index HTTP/1.1" 200 -
+127.0.0.1 - - [06/Dec/2019 23:37:29] "GET /index HTTP/1.1" 200 -
+127.0.0.1 - - [06/Dec/2019 23:37:30] "GET /index HTTP/1.1" 200 -
+127.0.0.1 - - [06/Dec/2019 23:37:36] "GET /index HTTP/1.1" 200 -
+127.0.0.1 - - [06/Dec/2019 23:37:36] "GET /index HTTP/1.1" 200 -
+^[[A^[[A^C(test3.8.0) merimos-MacBook-Air:flaskPractice macair$ python3 run.py
+ * Serving Flask app "app.app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+127.0.0.1 - - [06/Dec/2019 23:38:09] "GET /index HTTP/1.1" 200 -
+127.0.0.1 - - [06/Dec/2019 23:38:09] "GET /static/images/soundHouse.jpg HTTP/1.1" 200 -
+^C(test3.8.0) merimos-MacBook-Air:flaskPractice macair$ cd ~/Desktop
+(test3.8.0) merimos-MacBook-Air:Desktop macair$ which git
+/usr/bin/git
+(test3.8.0) merimos-MacBook-Air:Desktop macair$ git clone https://github.com/AyaNakayama/pythonStudy.git
+Cloning into 'pythonStudy'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+(test3.8.0) merimos-MacBook-Air:Desktop macair$ git version
+git version 2.14.3 (Apple Git-98)
+(test3.8.0) merimos-MacBook-Air:Desktop macair$ git config --global user.name"<AyaNakayama>"
+error: invalid key: user.name<AyaNakayama>
+(test3.8.0) merimos-MacBook-Air:Desktop macair$ git config --global user.name "<AyaNakayama>" 
+(test3.8.0) merimos-MacBook-Air:Desktop macair$ git config --global user.email <aya.m823@gmail.com> 
+-bash: syntax error near unexpected token `newline'
+(test3.8.0) merimos-MacBook-Air:Desktop macair$ git config --global user.email <aya.m823@gmail.com>
+-bash: syntax error near unexpected token `newline'
+(test3.8.0) merimos-MacBook-Air:Desktop macair$ git config --global user.email <aya.m823@gmail.com>
+-bash: syntax error near unexpected token `newline'
+(test3.8.0) merimos-MacBook-Air:Desktop macair$ git config --global user.email "<aya.m823@gmail.com>"
+(test3.8.0) merimos-MacBook-Air:Desktop macair$ 
